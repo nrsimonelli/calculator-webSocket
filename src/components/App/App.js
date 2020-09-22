@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from '../Header/Header';
+import Calculator from '../Calculator/Calculator';
+import Footer from '../Footer/Footer';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +15,9 @@ class App extends Component {
   render() {
     return (
       <div className="root">  
-      <p>test</p>
+      <Header />
+      <Calculator />
+      <Footer />
       </div>
     ); // end return
   } // end render
