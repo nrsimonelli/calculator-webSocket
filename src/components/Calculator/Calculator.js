@@ -42,7 +42,7 @@ class Calculator extends Component {
     console.log('equals clicked!')
     console.log(this.state.x, this.state.operator, this.state.y);
 
-
+    this.clearAll();
   }
   clearAll = () => {
     console.log('blank slate')
@@ -58,15 +58,67 @@ class Calculator extends Component {
   render() {
     return (
       <div className='root-calculator'>
-        <p>Calculating here: {this.state.x, this.state.operator, this.state.y}</p>
+        <p>Calculating here: {this.state.x + this.state.operator + this.state.y}</p>
+        <div className='row row-1'>
+          <button
+            value={7}
+            onClick={this.digitClicked}
+          >7</button>
+          <button
+            value={8}
+            onClick={this.digitClicked}
+          >8</button>
+          <button
+            value={9}
+            onClick={this.digitClicked}
+          >9</button>
+          <button
+            value={'/'}
+            onClick={this.operatorClicked}
+          >/</button>
+        </div>
+        <div className='row row-2'>
+        <button
+          value={4}
+          onClick={this.digitClicked}
+        >4</button>
+        <button
+          value={5}
+          onClick={this.digitClicked}
+        >5</button>
+        <button
+          value={6}
+          onClick={this.digitClicked}
+        >6</button>
+        <button
+          value={'*'}
+          onClick={this.operatorClicked}
+        >*</button>
+        </div>
+        <div className='row row-3'>
         <button
           value={1}
           onClick={this.digitClicked}
         >1</button>
         <button
-          value={'+'}
+          value={2}
+          onClick={this.digitClicked}
+        >2</button>
+        <button
+          value={3}
+          onClick={this.digitClicked}
+        >3</button>
+        <button
+          value={'-'}
           onClick={this.operatorClicked}
-        >+</button>
+        >-</button>
+
+        </div>
+        <div className='row row-4'>
+        <button
+          value={0}
+          onClick={this.digitClicked}
+        >0</button>
         <button
           onClick={this.clearAll}
         >C</button>
@@ -74,6 +126,12 @@ class Calculator extends Component {
           value={'='}
           onClick={this.equalClicked}
         >=</button>
+        <button
+          value={'+'}
+          onClick={this.operatorClicked}
+        >+</button>
+
+        </div>
         <AnswerList />
       </div>
     ) // end return
