@@ -23,6 +23,7 @@ router.post('/', (req,res)=> {
   const queryString = `
     INSERT INTO "submissions" ("x","operator","y","answer")
     VALUES ($1, $2, $3, $4);`;
+  console.log('req.body', entry)
     pool
       .query(queryString, [entry.x, entry.operator, entry.y, entry.answer])
       .then((result) => {
