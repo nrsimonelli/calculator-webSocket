@@ -41,7 +41,7 @@ class Calculator extends Component {
         >+</button>
         <button
           value={'='}
-          onClick={this.equalCicked}
+          onClick={this.equalClicked}
         >=</button>
         <AnswerList />
       </div>
