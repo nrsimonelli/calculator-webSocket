@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,6 +9,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Global Component Divs */
+.root {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  min-height: 600px;
+  margin: 0;
+  padding: 0;
+}
+.root-header {
+  border: 2px solid blue;
+}
+.root-calculator {
+  border: 2px solid green;
+}
+.root-list {
+  border: 2px solid purple;
+}
+.root-footer {
+  border: 2px solid yellow;
 }
 
 
