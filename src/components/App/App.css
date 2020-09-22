@@ -1,4 +1,6 @@
 body {
+  margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,24 +19,34 @@ code {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100vw;
+  height: 100vh;
   min-height: 600px;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 .root-header {
   border: 2px solid blue;
+  width: 100vw;
+  height: 150px;
+
 }
 .root-calculator {
   border: 2px solid green;
+  width: 100vw;
+  height: 60vh;
+  min-height: 300px;
 }
 .root-list {
   border: 2px solid purple;
 }
 .root-footer {
   border: 2px solid yellow;
+  width: 100vw;
+  height: 50px;
 }
 
 

@@ -6,7 +6,7 @@ function* calculatorSaga() {
   yield takeLatest("FETCH_CALCULATOR", getCalculation)
 }
 
-function getCalculation(action) {
+function* getCalculation(action) {
   try {
     const response = yield axios.get('api/calc');
     yield put ({ type: 'SET_CALCULATOR', payload: response.data });
