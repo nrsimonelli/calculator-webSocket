@@ -7,9 +7,14 @@ class Calculator extends Component {
     x: '',
     operator: '',
     y: '',
+    answer: '',
     onY: false,
     oneOperator: false,
 
+  }
+  
+  componentDidMount() {
+    this.props.dispatch({ type: 'FETCH_CALCULATOR' });
   }
 
   digitClicked = (event) => {
@@ -42,6 +47,41 @@ class Calculator extends Component {
     console.log('equals clicked!')
     console.log(this.state.x, this.state.operator, this.state.y);
 
+    this.calculate();
+  }
+  calculate = () => {
+    if(this.state.operator === '+') {
+      this.setState({
+        answer: Number(this.state.x) + Number(this.state.y)
+      })
+    }
+    if(this.state.operator === '-') {
+      this.setState({
+        answer: Number(this.state.x) - Number(this.state.y)
+      })
+    }
+    if(this.state.operator === '*') {
+      this.setState({
+        answer: Number(this.state.x) * Number(this.state.y)
+      })
+    }
+    if(this.state.operator === '/') {
+      this.setState({
+        answer: Number(this.state.x) / Number(this.state.y)
+      })
+    }
+    this.sendEquation();
+  }
+  sendEquation = () => {
+    this.props.dispatch({
+      type: "ADD_CALCULATOR",
+      palyoad: {
+        x: this.state.x,
+        operator: this.state.operator,
+        y: this.state.y,
+        answer: this.state.answer,
+      },
+    });
     this.clearAll();
   }
   clearAll = () => {
@@ -50,9 +90,11 @@ class Calculator extends Component {
       x: '',
       operator: '',
       y: '',
+      answer: '',
       onY: false,
       oneOperator: false,
     })
+    this.props.dispatch({ type: 'FETCH_CALCULATOR' })
   }
 
   render() {
@@ -132,7 +174,15 @@ class Calculator extends Component {
         >+</button>
 
         </div>
-        <AnswerList />
+        {/* {this.props.reduxState.calculations.map((entry, i)=> (
+          <AnswerList key={i} entry={entry} />
+        ))} */}
+
+        <div>
+          testing:
+          {JSON.stringify(this.props.reduxState)}
+        </div>
+        
       </div>
     ) // end return
   } // end render

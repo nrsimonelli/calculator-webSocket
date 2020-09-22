@@ -1,10 +1,11 @@
 --DB_NAME = calculator_live
 
-CREATE TABLE "submissions" (
+CREATE TABLE "submissions" ( 
   "id" SERIAL PRIMARY KEY,
   "x" INT,
   "operator" VARCHAR (1),
   "y" INT,
+  "answer" INT,
   "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

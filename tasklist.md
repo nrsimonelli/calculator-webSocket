@@ -9,15 +9,15 @@ _9/22/2020_
 [ ] - research webhooks
 
 ## Back End
-[ ] - Server, pool, router
-[ ] - reducer, saga
+[x] - Server, pool, router
+[x] - reducer, saga
 [ ] - DB connection and table setup
-[ ] - calculator logic
+[x] - calculator logic
 [ ] - basic get call and post route
-[ ] - grab only 10 most recent entries
+[x] - grab only 10 most recent entries
 
 ## Front end
-[ ] - basic css for calc components
+[x] - basic css for calc components
 [ ] - state and button components
 [ ] - click listeners and event listeners
 

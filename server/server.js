@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 /* Routes */
-app.use("/api/calc", calculatorRouter);
+app.use("/api/calculator", calculatorRouter);
 
 
 // Serve static files
