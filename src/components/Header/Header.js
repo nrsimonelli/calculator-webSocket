@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
       <div className='root-header'>
-        <p>this is header</p>
+        <p>Live Calculator</p>
       </div>
     ) // end return
   } // end render

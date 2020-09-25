@@ -121,7 +121,7 @@ class Calculator extends Component {
   render() {
     return (
       <div className='root-calculator'>
-        <p>Calculating here: {this.state.x + this.state.operator + this.state.y}</p>
+        <p>Calculating... {this.state.x + this.state.operator + this.state.y}</p>
         <div>
         <div className='row row-1'>
           <button
