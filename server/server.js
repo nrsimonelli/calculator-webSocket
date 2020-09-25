@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 
 // Route includes
-const calculatorRouter = require("./routes/calculator.router.js");
+const calculatorRouter = require("./routes/calculator.router");
 
 
 // Body parser middleware

@@ -12,6 +12,7 @@ class Calculator extends Component {
     oneOperator: false,
 
   }
+
   
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_CALCULATOR' });
@@ -50,36 +51,37 @@ class Calculator extends Component {
     this.calculate();
   }
   calculate = () => {
+    let solve = 1;
     if(this.state.operator === '+') {
-      this.setState({
-        answer: Number(this.state.x) + Number(this.state.y)
-      })
+      
+      solve = Number(this.state.x) + Number(this.state.y);
+      
     }
     if(this.state.operator === '-') {
-      this.setState({
-        answer: Number(this.state.x) - Number(this.state.y)
-      })
+
+      solve = Number(this.state.x) - Number(this.state.y);
+    
     }
     if(this.state.operator === '*') {
-      this.setState({
-        answer: Number(this.state.x) * Number(this.state.y)
-      })
+      
+      solve = Number(this.state.x) * Number(this.state.y)
+      
     }
     if(this.state.operator === '/') {
-      this.setState({
-        answer: Number(this.state.x) / Number(this.state.y)
-      })
+      
+      solve = Number(this.state.x) / Number(this.state.y)
+      
     }
-    this.sendEquation();
+    this.sendEquation(solve);
   }
-  sendEquation = () => {
+  sendEquation = (solve) => {
     this.props.dispatch({
       type: "ADD_CALCULATOR",
-      palyoad: {
+      payload: {
         x: this.state.x,
         operator: this.state.operator,
         y: this.state.y,
-        answer: this.state.answer,
+        answer: solve,
       },
     });
     this.clearAll();
@@ -101,56 +103,69 @@ class Calculator extends Component {
     return (
       <div className='root-calculator'>
         <p>Calculating here: {this.state.x + this.state.operator + this.state.y}</p>
+        <div>
         <div className='row row-1'>
           <button
+            className='digit'
             value={7}
             onClick={this.digitClicked}
           >7</button>
           <button
+            className='digit'
             value={8}
             onClick={this.digitClicked}
           >8</button>
           <button
+            className='digit'
             value={9}
             onClick={this.digitClicked}
           >9</button>
           <button
+            className='operator'
             value={'/'}
             onClick={this.operatorClicked}
           >/</button>
         </div>
         <div className='row row-2'>
         <button
+          className='digit'
           value={4}
           onClick={this.digitClicked}
         >4</button>
         <button
+          className='digit'
           value={5}
           onClick={this.digitClicked}
         >5</button>
         <button
+        className='digit'
           value={6}
           onClick={this.digitClicked}
         >6</button>
         <button
+          className='operator'
           value={'*'}
           onClick={this.operatorClicked}
         >*</button>
         </div>
         <div className='row row-3'>
         <button
+          className='digit'
           value={1}
           onClick={this.digitClicked}
         >1</button>
         <button
+          className='digit'
           value={2}
           onClick={this.digitClicked}
         >2</button>
         <button
+          className='digit'
           value={3}
           onClick={this.digitClicked}
         >3</button>
         <button
+          className='operator'
           value={'-'}
           onClick={this.operatorClicked}
         >-</button>
@@ -158,29 +173,32 @@ class Calculator extends Component {
         </div>
         <div className='row row-4'>
         <button
+          className='digit'
           value={0}
           onClick={this.digitClicked}
         >0</button>
         <button
+          className='clear'
           onClick={this.clearAll}
         >C</button>
         <button
+          className='equal'
           value={'='}
           onClick={this.equalClicked}
         >=</button>
         <button
+          className='operator'
           value={'+'}
           onClick={this.operatorClicked}
         >+</button>
 
         </div>
-        {/* {this.props.reduxState.calculations.map((entry, i)=> (
-          <AnswerList key={i} entry={entry} />
-        ))} */}
+
+        </div>
+       
+          <AnswerList />
 
         <div>
-          testing:
-          {JSON.stringify(this.props.reduxState)}
         </div>
         
       </div>

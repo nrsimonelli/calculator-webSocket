@@ -31,22 +31,52 @@ code {
 .root-header {
   border: 2px solid blue;
   width: 100vw;
-  height: 150px;
+  height: 100px;
 
 }
 .root-calculator {
   border: 2px solid green;
   width: 100vw;
-  height: 60vh;
-  min-height: 300px;
+  height: 70vh;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .root-list {
   border: 2px solid purple;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
 }
 .root-footer {
   border: 2px solid yellow;
   width: 100vw;
   height: 50px;
 }
+button {
+  width: 50px;
+  padding: 5px;
+  margin: 1px;
+}
+button:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em #121212;
+  transform: translateY(-0.05em);
+}
+.equal {
+  background-color: #e5df88;
+}
+.clear {
+  background-color: #a37eba;
+}
+.digit {
+  background-color: #e8e8e8;
+
+}
+.operator {
+  color: white;
+  background-color: #4c4c4c;
+}
+
 
 
