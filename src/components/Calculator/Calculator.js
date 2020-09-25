@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AnswerList from '../AnswerList/AnswerList';
 
+
+const ws = new WebSocket('ws://localhost:8080');
+
+
 class Calculator extends Component {
   state = {
     x: '',
@@ -12,10 +16,25 @@ class Calculator extends Component {
     oneOperator: false,
 
   }
-
   
   componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_CALCULATOR' });
+    this.webListen()
+
+  }
+
+  webListen = () => {
+    ws.addEventListener('open', () => {
+      console.log('webSocket Handshake');
+      
+      ws.send('test message success')
+    })
+
+    ws.addEventListener('message', e => {
+      console.log(e);
+
+      this.props.dispatch({ type: 'FETCH_CALCULATOR' });
+
+    })
   }
 
   digitClicked = (event) => {
@@ -96,13 +115,13 @@ class Calculator extends Component {
       onY: false,
       oneOperator: false,
     })
-    this.props.dispatch({ type: 'FETCH_CALCULATOR' })
+    ws.send('group refresh?')
   }
 
   render() {
     return (
       <div className='root-calculator'>
-        <p>Calculating here: {this.state.x + this.state.operator + this.state.y}</p>
+        <p>Calculating... {this.state.x + this.state.operator + this.state.y}</p>
         <div>
         <div className='row row-1'>
           <button

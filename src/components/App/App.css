@@ -15,7 +15,7 @@ code {
 
 /* Global Component Divs */
 .root {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -29,28 +29,40 @@ code {
   text-align: center;
 }
 .root-header {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   width: 100vw;
   height: 100px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .2em;
+  font-size: 2em;
 
 }
 .root-calculator {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   width: 100vw;
   height: 70vh;
   min-height: 450px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  font-weight: 400;
 }
 .root-list {
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: flex-start;
   text-align: left;
+  width: 205px;
+}
+ul {
+  list-style: none;
 }
 .root-footer {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   width: 100vw;
   height: 50px;
 }
