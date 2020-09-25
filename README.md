@@ -39,3 +39,10 @@ Basic calculator application which shows the most recent inputs by any user but 
 
 ![image](public/home.png)
 
+## Future Improvements 
+
+With more time I would like to open the client with a login screen. There, they would be able to chose a username and proceed to the calculator. This way, once equations are submitted they could be displayed in realtime  alongside their corresponding user.
+
+With a slight change to the DB structure I could display the top three users by total calculations submitted or something similar.
+
+To build on WebSocket integration a future project may include chat rooms or interactive games to build on bi-directional communication with authentication.
