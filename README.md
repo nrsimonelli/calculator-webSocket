@@ -18,9 +18,22 @@ Basic calculator application which shows the most recent inputs by any user but 
 - WebSockets
 - PostgreSQL
 
-## Installation
+## Installation & Deployment
+
+- create a database named ```calculator_live```
+- run the ```CREATE TABLE``` query found in ```database.sql``` to create the necessary data structure for this application.
+- _This project was built using Postgres and I recommend having that installed to handle your DB._
+- Open editor of choice and ```npm install``` for dependencies
+- Open terminal and ```npm run server``` 
+- Open second terminal and ```npm run client```
+- The previous command will open a browser tab and have the project running for you!
+
 
 ## Usage
+
+- Enter a simple calculation you would like to have solved
+- Click the ```equals button``` to submit the equation and view the answer below
+- To see the full functionality of this application open multiple instances of this project at once for real time updates whenever an equation is submitted. 
 
 ## Screenshots
 
